@@ -109,17 +109,19 @@
 
     .section-subtitle {
       color: var(--muted);
-      max-width: 620px;
+      max-width: 650px;
       font-size: 16px;
       line-height: 1.8;
       margin-bottom: 56px;
     }
 
+    /* HERO */
+
     .hero {
       min-height: 100vh;
       padding: 140px 10% 80px;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 56px;
       align-items: center;
     }
@@ -286,6 +288,8 @@
       line-height: 1.7;
     }
 
+    /* EXPERIENCE */
+
     #experience {
       background: var(--bg);
     }
@@ -374,6 +378,8 @@
       color: var(--muted);
       font-weight: 500;
     }
+
+    /* PROJECTS */
 
     #projects {
       background: var(--surface);
@@ -524,6 +530,44 @@
       margin: 14px 0;
     }
 
+    .automation-preview {
+      display: grid;
+      gap: 12px;
+    }
+
+    .automation-step {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .automation-step strong {
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .automation-step small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .status-pill {
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(62,207,142,0.12);
+      border: 1px solid rgba(62,207,142,0.25);
+      color: var(--green);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
     .feed-preview {
       display: flex;
       flex-direction: column;
@@ -621,6 +665,8 @@
       transform: rotate(136deg);
     }
 
+    /* BLOG */
+
     #thoughts {
       background: var(--bg);
     }
@@ -693,49 +739,10 @@
       gap: 10px;
     }
 
-    #skills {
-      background: var(--surface);
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .skill-group {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px;
-    }
-
-    .skill-group h4 {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .skill-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .skill-pill {
-      padding: 6px 14px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-size: 13px;
-      color: var(--text);
-    }
+    /* CONTACT */
 
     #contact {
-      background: var(--bg);
+      background: var(--surface);
       text-align: center;
     }
 
@@ -764,7 +771,7 @@
     }
 
     .contact-card {
-      background: var(--surface);
+      background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 28px 36px;
@@ -804,6 +811,7 @@
       align-items: center;
       font-size: 13px;
       color: var(--muted);
+      background: var(--bg);
     }
 
     @media (max-width: 900px) {
@@ -855,11 +863,11 @@
 
   <nav>
     <div class="logo">IC</div>
+
     <div class="nav-links">
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#thoughts">Writing</a>
-      <a href="#skills">Skills</a>
+      <a href="#thoughts">Blog</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -870,7 +878,8 @@
       <div class="hero-badges">
         <div class="badge"><span class="badge-dot"></span> JPMorgan Chase · Incoming Analyst</div>
         <div class="badge">UGA Terry College of Business</div>
-        <div class="badge">Silicon Valley Seminar</div>
+        <div class="badge">Jira Automations</div>
+        <div class="badge">App Prototype</div>
       </div>
 
       <h1>
@@ -879,15 +888,15 @@
       </h1>
 
       <p class="hero-sub">
-        <strong>UGA business student building consumer product concepts through design, systems thinking, and technical experimentation.</strong>
+        <strong>UGA business student building product prototypes, workflow automations, and small technical systems.</strong>
         <br><br>
-        I am interested in fintech, social products, gaming systems, and behavioral UX.
+        Focused on fintech, consumer apps, gaming systems, and tools that reduce friction.
       </p>
 
       <div class="hero-meta">
         <span>📍 Athens, GA</span>
         <span style="color:var(--border)">•</span>
-        <span>🎓 Expected May 2026</span>
+        <span>🎓 Expected December 2026</span>
       </div>
 
       <div class="hero-ctas">
@@ -899,8 +908,8 @@
     <div class="hero-visual">
       <div>
         <div class="visual-top">
-          <span>Portfolio focus</span>
-          <span>Product + Technical Exploration</span>
+          <span>Current focus</span>
+          <span>Product + Systems</span>
         </div>
 
         <div class="visual-window">
@@ -908,7 +917,9 @@
             <div class="visual-block"></div>
             <div class="visual-block"></div>
           </div>
+
           <div class="visual-block large"></div>
+
           <div class="visual-row" style="margin-top:14px;">
             <div class="visual-block"></div>
             <div class="visual-block"></div>
@@ -918,7 +929,7 @@
       </div>
 
       <p class="visual-caption">
-        Building small projects to understand how people use products, where friction shows up, and how better systems reduce unnecessary steps.
+        I use small projects to study how people move through products, where friction appears, and how clearer systems can reduce unnecessary steps.
       </p>
     </div>
 
@@ -927,8 +938,9 @@
   <section id="experience">
     <div class="section-label"><span></span> Experience</div>
     <h2 class="section-title">Where I've Been</h2>
+
     <p class="section-subtitle">
-      A mix of finance, product exposure, and business systems work.
+      Finance, product exposure, research, and business systems work.
     </p>
 
     <div class="exp-cards">
@@ -937,20 +949,62 @@
         <div class="exp-header">
           <div>
             <div class="exp-org">JPMorgan Chase</div>
-            <div class="exp-role">Incoming Summer Analyst</div>
+            <div class="exp-role">Incoming Analyst</div>
           </div>
           <div class="exp-date">Summer 2025</div>
         </div>
 
         <div class="exp-bullets">
-          <div class="exp-bullet">Incoming analyst role in financial services.</div>
-          <div class="exp-bullet">Interested in how consumer banking products can become clearer for younger users.</div>
+          <div class="exp-bullet">Incoming role in financial services.</div>
+          <div class="exp-bullet">Interested in how banking products can become clearer for younger users.</div>
         </div>
 
         <div class="tag-row">
           <span class="tag">Finance</span>
           <span class="tag">Fintech</span>
           <span class="tag">Consumer Banking</span>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-org">Georgia Tech Systems Engineering Research</div>
+            <div class="exp-role">Research Exposure / Project Work</div>
+          </div>
+          <div class="exp-date">2024</div>
+        </div>
+
+        <div class="exp-bullets">
+          <div class="exp-bullet">Studied systems engineering concepts through research exposure at Georgia Tech.</div>
+          <div class="exp-bullet">Connected systems thinking to operations, workflows, and decision-making.</div>
+        </div>
+
+        <div class="tag-row">
+          <span class="tag">Systems Engineering</span>
+          <span class="tag">Research</span>
+          <span class="tag">Operations</span>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-org">UGA Terry College of Business</div>
+            <div class="exp-role">Student · Management Information Systems</div>
+          </div>
+          <div class="exp-date">2022 – 2026</div>
+        </div>
+
+        <div class="exp-bullets">
+          <div class="exp-bullet">Coursework across business analytics, systems design, data, and digital strategy.</div>
+          <div class="exp-bullet">Building side projects across product design, workflow automation, and technical systems.</div>
+        </div>
+
+        <div class="tag-row">
+          <span class="tag">MIS</span>
+          <span class="tag">Business Analytics</span>
+          <span class="tag">UGA</span>
         </div>
       </div>
 
@@ -975,35 +1029,15 @@
         </div>
       </div>
 
-      <div class="exp-card">
-        <div class="exp-header">
-          <div>
-            <div class="exp-org">UGA Terry College of Business</div>
-            <div class="exp-role">Student · Management Information Systems</div>
-          </div>
-          <div class="exp-date">2022 – 2026</div>
-        </div>
-
-        <div class="exp-bullets">
-          <div class="exp-bullet">Coursework across business analytics, systems design, data, and digital strategy.</div>
-          <div class="exp-bullet">Building side projects across product design, consumer apps, and technical systems.</div>
-        </div>
-
-        <div class="tag-row">
-          <span class="tag">MIS</span>
-          <span class="tag">Business Analytics</span>
-          <span class="tag">UGA</span>
-        </div>
-      </div>
-
     </div>
   </section>
 
   <section id="projects">
     <div class="section-label"><span></span> Projects</div>
     <h2 class="section-title">Featured Work</h2>
+
     <p class="section-subtitle">
-      Side projects where I use design, product thinking, and code to study how systems work.
+      Side projects where I use product thinking, design, and code to study how better systems work.
     </p>
 
     <div class="project-cards">
@@ -1020,7 +1054,7 @@
           <ul class="project-list">
             <li>Reduced clutter from low-relevance products like home lending and auto loans.</li>
             <li>Simplified navigation with a flatter structure inspired by Cash App.</li>
-            <li>Explored a cleaner spending history view focused on visibility and faster understanding.</li>
+            <li>Explored a cleaner spending history view focused on faster understanding.</li>
           </ul>
 
           <div class="tag-row">
@@ -1032,7 +1066,7 @@
         </div>
 
         <div class="project-visual">
-          <div class="project-visual-label">Visual placeholder · add Figma screenshot here</div>
+          <div class="project-visual-label">App prototype placeholder</div>
 
           <div class="phone-frame">
             <div class="phone-pill"></div>
@@ -1042,6 +1076,59 @@
             <div class="ui-line"></div>
             <div class="ui-line medium"></div>
             <div class="ui-card"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <h3>Jira Workflow Automations</h3>
+          <div class="project-meta">Automation Project · Jira · Workflow Design</div>
+
+          <p>
+            Built Jira automations to reduce manual project tracking work and make task movement easier to manage.
+          </p>
+
+          <ul class="project-list">
+            <li>Mapped repeated project updates into clearer workflow steps.</li>
+            <li>Used automation logic to reduce manual status tracking.</li>
+            <li>Focused on making handoffs easier to see and manage.</li>
+          </ul>
+
+          <div class="tag-row">
+            <span class="tag">Jira</span>
+            <span class="tag">Automation</span>
+            <span class="tag">Workflow Design</span>
+          </div>
+        </div>
+
+        <div class="project-visual">
+          <div class="project-visual-label">Workflow logic</div>
+
+          <div class="automation-preview">
+            <div class="automation-step">
+              <div>
+                <strong>Issue created</strong>
+                <small>Trigger</small>
+              </div>
+              <span class="status-pill">Start</span>
+            </div>
+
+            <div class="automation-step">
+              <div>
+                <strong>Assign owner</strong>
+                <small>Automation rule</small>
+              </div>
+              <span class="status-pill">Rule</span>
+            </div>
+
+            <div class="automation-step">
+              <div>
+                <strong>Move task</strong>
+                <small>Status update</small>
+              </div>
+              <span class="status-pill">Done</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1178,10 +1265,11 @@
   </section>
 
   <section id="thoughts">
-    <div class="section-label"><span></span> Writing</div>
-    <h2 class="section-title">Notes I'm Developing</h2>
+    <div class="section-label"><span></span> Blog</div>
+    <h2 class="section-title">Product Notes</h2>
+
     <p class="section-subtitle">
-      Short product essays I am shaping from games, consumer apps, and systems I study.
+      Short essays I am shaping from games, consumer apps, and systems I study.
     </p>
 
     <div class="thought-cards">
@@ -1191,10 +1279,13 @@
           <span class="thought-cat">Product</span>
           <span class="thought-read">5 min read</span>
         </div>
+
         <h3>Why Clash Royale Feels Like Chess</h3>
+
         <p>
           On resource management, tempo, and why mobile games can teach strategic intuition.
         </p>
+
         <a href="#" class="read-link">Draft in Progress →</a>
       </div>
 
@@ -1203,10 +1294,13 @@
           <span class="thought-cat">Consumer</span>
           <span class="thought-read">6 min read</span>
         </div>
+
         <h3>What Strava Gets Right About Social Identity</h3>
+
         <p>
           Strava works because it is not just a fitness tracker. It helps people perform and reinforce an identity.
         </p>
+
         <a href="#" class="read-link">Draft in Progress →</a>
       </div>
 
@@ -1215,63 +1309,14 @@
           <span class="thought-cat">Systems</span>
           <span class="thought-read">4 min read</span>
         </div>
+
         <h3>Good Products Reduce Friction, Not Intelligence</h3>
+
         <p>
           The best products remove extra steps so users can use the intelligence they already have.
         </p>
+
         <a href="#" class="read-link">Draft in Progress →</a>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="skills">
-    <div class="section-label"><span></span> Skills</div>
-    <h2 class="section-title">Tools & Skills</h2>
-    <p class="section-subtitle">
-      Tools I use across product design, technical projects, and business analysis.
-    </p>
-
-    <div class="skills-grid">
-
-      <div class="skill-group">
-        <h4>Languages</h4>
-        <div class="skill-pills">
-          <span class="skill-pill">Python</span>
-          <span class="skill-pill">JavaScript</span>
-          <span class="skill-pill">HTML / CSS</span>
-          <span class="skill-pill">SQL</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <h4>Tools</h4>
-        <div class="skill-pills">
-          <span class="skill-pill">Figma</span>
-          <span class="skill-pill">Git / GitHub</span>
-          <span class="skill-pill">React</span>
-          <span class="skill-pill">Node.js</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <h4>Product Areas</h4>
-        <div class="skill-pills">
-          <span class="skill-pill">Fintech</span>
-          <span class="skill-pill">Consumer Apps</span>
-          <span class="skill-pill">Behavioral UX</span>
-          <span class="skill-pill">Gaming Systems</span>
-        </div>
-      </div>
-
-      <div class="skill-group">
-        <h4>Coursework</h4>
-        <div class="skill-pills">
-          <span class="skill-pill">Business Analytics</span>
-          <span class="skill-pill">MIS</span>
-          <span class="skill-pill">Data Structures</span>
-          <span class="skill-pill">Digital Strategy</span>
-        </div>
       </div>
 
     </div>
@@ -1308,6 +1353,7 @@
 
   <footer>
     <span>© 2026 Isaiah Campusano. All rights reserved.</span>
+
     <span style="display:flex;gap:20px">
       <a href="mailto:your@email.com" style="color:var(--muted);text-decoration:none">✉️</a>
       <a href="https://linkedin.com/in/yourhandle" target="_blank" style="color:var(--muted);text-decoration:none">💼</a>
