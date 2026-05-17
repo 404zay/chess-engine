@@ -2,95 +2,267 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>404zay Chess Engine</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>404zay | Chess Engine</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
 
-    body {
+    * {
       margin: 0;
-      background-color: #0d0d0d;
-      color: white;
-      font-family: Arial, sans-serif;
+      padding: 0;
+      box-sizing: border-box;
     }
 
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f5f5;
+      color: #111;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      width: 100%;
+      padding: 28px 80px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      position: fixed;
+      top: 0;
+
+      background: rgba(245,245,245,0.85);
+      backdrop-filter: blur(12px);
+
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 24px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: black;
+    }
+
+    .resume-btn {
+      background: #4f7cff;
+      color: white;
+      padding: 12px 20px;
+
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+
+      transition: 0.2s ease;
+    }
+
+    .resume-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+
     .hero {
-      height: 100vh;
+
+      min-height: 100vh;
 
       display: flex;
       justify-content: center;
       align-items: center;
 
-      padding: 0 10%;
+      padding: 140px 10%;
+      gap: 100px;
     }
 
-    .hero-content {
-      max-width: 700px;
+    .hero-left {
+      max-width: 650px;
     }
 
-    .tag {
-      display: inline-block;
-      background: #1f1f1f;
+    .badges {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: #e8e8e8;
       padding: 8px 14px;
       border-radius: 999px;
+
       font-size: 14px;
-      margin-bottom: 20px;
-      color: #bdbdbd;
+      font-weight: 600;
+      color: #444;
     }
 
     h1 {
-      font-size: 64px;
-      margin: 0;
-      line-height: 1.1;
+      font-size: 82px;
+      line-height: 1.05;
+      margin-bottom: 12px;
     }
 
     .gradient {
-      background: linear-gradient(to right, #6a5cff, #4ba3ff);
+      background: linear-gradient(
+        to right,
+        #4f7cff,
+        #7b4dff
+      );
+
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .subtitle {
-      font-size: 24px;
-      margin-top: 18px;
-      color: #9f9f9f;
+      font-size: 36px;
+      color: #6b6bff;
+      font-weight: 600;
+
+      margin-bottom: 32px;
     }
 
     .description {
-      margin-top: 30px;
+      font-size: 20px;
       line-height: 1.8;
-      font-size: 18px;
-      color: #cfcfcf;
+      color: #555;
+
+      margin-bottom: 42px;
     }
 
     .buttons {
-      margin-top: 40px;
       display: flex;
-      gap: 16px;
+      gap: 18px;
+      margin-bottom: 40px;
     }
 
-    .btn {
-      padding: 14px 24px;
-      border-radius: 12px;
+    .primary-btn {
+      background: #4f7cff;
+      color: white;
+
+      padding: 16px 28px;
+      border-radius: 14px;
+
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+
       transition: 0.2s ease;
     }
 
-    .primary {
-      background: #4f7cff;
-      color: white;
+    .secondary-btn {
+
+      border: 1px solid #ddd;
+
+      padding: 16px 28px;
+      border-radius: 14px;
+
+      text-decoration: none;
+      color: #111;
+      font-weight: 600;
+
+      transition: 0.2s ease;
     }
 
-    .secondary {
-      border: 1px solid #444;
-      color: white;
+    .primary-btn:hover,
+    .secondary-btn:hover {
+      transform: translateY(-3px);
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
+    .info-row {
+
+      display: flex;
+      gap: 26px;
+      flex-wrap: wrap;
+
+      color: #666;
+      font-weight: 500;
+    }
+
+    /* PROFILE IMAGE */
+
+    .hero-right {
+      position: relative;
+    }
+
+    .profile-image {
+
+      width: 420px;
+      height: 420px;
+
+      border-radius: 50%;
+      object-fit: cover;
+
+      border: 6px solid #7b4dff;
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.15);
+
+      transition: 0.3s ease;
+    }
+
+    .profile-image:hover {
+      transform: scale(1.02);
+    }
+
+    /* RESPONSIVE */
+
+    @media screen and (max-width: 1100px) {
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .info-row {
+        justify-content: center;
+      }
+
+      h1 {
+        font-size: 58px;
+      }
+
+      .profile-image {
+        width: 300px;
+        height: 300px;
+      }
+
+      nav {
+        padding: 22px 32px;
+      }
+
+      .nav-links {
+        display: none;
+      }
     }
 
   </style>
@@ -99,37 +271,80 @@
 
 <body>
 
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="logo">
+      404zay
+    </div>
+
+    <div class="nav-links">
+
+      <a href="">About</a>
+      <a href="">Projects</a>
+      <a href="">Skills</a>
+      <a href="">Contact</a>
+
+    </div>
+
+    <a
+      class="resume-btn"
+      href="https://github.com/404zay"
+      target="_blank"
+    >
+      GitHub
+    </a>
+
+  </nav>
+
+  <!-- HERO SECTION -->
+
   <section class="hero">
 
-    <div class="hero-content">
+    <div class="hero-left">
 
-      <div class="tag">
-        Chess AI • Minimax • Python
+      <div class="badges">
+
+        <div class="badge">
+          Chess Engine
+        </div>
+
+        <div class="badge">
+          Python Developer
+        </div>
+
+        <div class="badge">
+          AI + Strategy
+        </div>
+
       </div>
 
       <h1>
-        Building a
+
+        Hi, I'm
         <span class="gradient">
-          Chess Engine
+          Isaiah
         </span>
-        From Scratch
+
       </h1>
 
       <div class="subtitle">
-        Learning strategy, AI systems, and search trees through code.
+        Building Systems Through Code
       </div>
 
       <div class="description">
-        This project explores how chess engines think:
-        board representation, legal move generation,
-        minimax decision-making, alpha-beta pruning,
-        and long-term strategic evaluation.
+
+        Computer science and product-focused builder exploring
+        chess AI, minimax search trees, strategic systems,
+        and interactive frontend experiences.
+
       </div>
 
       <div class="buttons">
 
         <a
-          class="btn primary"
+          class="primary-btn"
           href="https://github.com/404zay/chess-engine"
           target="_blank"
         >
@@ -137,7 +352,7 @@
         </a>
 
         <a
-          class="btn secondary"
+          class="secondary-btn"
           href="https://github.com/404zay"
           target="_blank"
         >
@@ -145,6 +360,31 @@
         </a>
 
       </div>
+
+      <div class="info-row">
+
+        <div>
+          Athens, GA
+        </div>
+
+        <div>
+          UGA Terry College
+        </div>
+
+        <div>
+          Chess Engine Project
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="hero-right">
+
+      <img
+        class="profile-image"
+        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop"
+      >
 
     </div>
 
