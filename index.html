@@ -6,9 +6,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>404zay | Chess Engine</title>
+  <title>404zay Portfolio</title>
 
-  <!-- Google Font -->
+  <!-- FONT -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -25,17 +26,24 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
+
       font-family: 'Inter', sans-serif;
-      background: #f5f5f5;
-      color: #111;
+
+      background: #0d0d0d;
+      color: white;
     }
 
     /* NAVBAR */
 
     nav {
+
       width: 100%;
-      padding: 28px 80px;
+      padding: 28px 10%;
 
       display: flex;
       justify-content: space-between;
@@ -44,48 +52,36 @@
       position: fixed;
       top: 0;
 
-      background: rgba(245,245,245,0.85);
+      background: rgba(13,13,13,0.8);
       backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid rgba(255,255,255,0.05);
 
       z-index: 1000;
     }
 
     .logo {
-      font-weight: 800;
       font-size: 24px;
+      font-weight: 800;
     }
 
     .nav-links {
+
       display: flex;
       gap: 36px;
     }
 
     .nav-links a {
+
       text-decoration: none;
-      color: #555;
+      color: #a1a1a1;
       font-weight: 500;
 
       transition: 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: black;
-    }
-
-    .resume-btn {
-      background: #4f7cff;
       color: white;
-      padding: 12px 20px;
-
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-
-      transition: 0.2s ease;
-    }
-
-    .resume-btn:hover {
-      transform: translateY(-2px);
     }
 
     /* HERO */
@@ -98,38 +94,41 @@
       justify-content: center;
       align-items: center;
 
-      padding: 140px 10%;
       gap: 100px;
+
+      padding: 160px 10%;
     }
 
     .hero-left {
       max-width: 650px;
     }
 
-    .badges {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 26px;
-      flex-wrap: wrap;
-    }
+    .tag {
 
-    .badge {
-      background: #e8e8e8;
-      padding: 8px 14px;
+      display: inline-block;
+
+      padding: 10px 18px;
+
+      background: #1c1c1c;
+
       border-radius: 999px;
 
+      color: #b5b5b5;
       font-size: 14px;
-      font-weight: 600;
-      color: #444;
+
+      margin-bottom: 28px;
     }
 
     h1 {
+
       font-size: 82px;
       line-height: 1.05;
-      margin-bottom: 12px;
+
+      margin-bottom: 18px;
     }
 
     .gradient {
+
       background: linear-gradient(
         to right,
         #4f7cff,
@@ -141,93 +140,147 @@
     }
 
     .subtitle {
-      font-size: 36px;
-      color: #6b6bff;
-      font-weight: 600;
 
-      margin-bottom: 32px;
+      font-size: 28px;
+      color: #9a9a9a;
+
+      margin-bottom: 34px;
     }
 
     .description {
+
       font-size: 20px;
       line-height: 1.8;
-      color: #555;
+
+      color: #bdbdbd;
 
       margin-bottom: 42px;
     }
 
     .buttons {
+
       display: flex;
       gap: 18px;
-      margin-bottom: 40px;
     }
 
-    .primary-btn {
+    .btn {
+
+      padding: 16px 28px;
+
+      border-radius: 14px;
+
+      text-decoration: none;
+      font-weight: 600;
+
+      transition: 0.25s ease;
+    }
+
+    .primary {
+
       background: #4f7cff;
       color: white;
-
-      padding: 16px 28px;
-      border-radius: 14px;
-
-      text-decoration: none;
-      font-weight: 600;
-
-      transition: 0.2s ease;
     }
 
-    .secondary-btn {
+    .secondary {
 
-      border: 1px solid #ddd;
-
-      padding: 16px 28px;
-      border-radius: 14px;
-
-      text-decoration: none;
-      color: #111;
-      font-weight: 600;
-
-      transition: 0.2s ease;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: white;
     }
 
-    .primary-btn:hover,
-    .secondary-btn:hover {
+    .btn:hover {
+
       transform: translateY(-3px);
-    }
-
-    .info-row {
-
-      display: flex;
-      gap: 26px;
-      flex-wrap: wrap;
-
-      color: #666;
-      font-weight: 500;
     }
 
     /* PROFILE IMAGE */
 
-    .hero-right {
-      position: relative;
-    }
-
     .profile-image {
 
-      width: 420px;
-      height: 420px;
+      width: 380px;
+      height: 380px;
 
       border-radius: 50%;
+
       object-fit: cover;
 
-      border: 6px solid #7b4dff;
+      border: 5px solid #6a5cff;
 
       box-shadow:
-        0 20px 60px rgba(0,0,0,0.15);
+        0 20px 60px rgba(0,0,0,0.4);
 
       transition: 0.3s ease;
     }
 
     .profile-image:hover {
+
       transform: scale(1.02);
+    }
+
+    /* PROJECTS SECTION */
+
+    .projects {
+
+      padding: 120px 10%;
+    }
+
+    .section-title {
+
+      font-size: 52px;
+      margin-bottom: 60px;
+    }
+
+    .project-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(320px, 1fr));
+
+      gap: 32px;
+    }
+
+    .project-card {
+
+      background: #161616;
+
+      border: 1px solid rgba(255,255,255,0.06);
+
+      border-radius: 24px;
+
+      padding: 32px;
+
+      transition: 0.25s ease;
+    }
+
+    .project-card:hover {
+
+      transform: translateY(-6px);
+
+      border-color: rgba(106,92,255,0.4);
+    }
+
+    .project-card h3 {
+
+      font-size: 30px;
+      margin-bottom: 18px;
+    }
+
+    .project-card p {
+
+      color: #b5b5b5;
+
+      line-height: 1.7;
+
+      margin-bottom: 26px;
+    }
+
+    .project-link {
+
+      text-decoration: none;
+
+      color: #6a5cff;
+
+      font-weight: 600;
     }
 
     /* RESPONSIVE */
@@ -235,29 +288,23 @@
     @media screen and (max-width: 1100px) {
 
       .hero {
+
         flex-direction: column;
         text-align: center;
-      }
-
-      .buttons {
-        justify-content: center;
-      }
-
-      .info-row {
-        justify-content: center;
       }
 
       h1 {
         font-size: 58px;
       }
 
-      .profile-image {
-        width: 300px;
-        height: 300px;
+      .buttons {
+        justify-content: center;
       }
 
-      nav {
-        padding: 22px 32px;
+      .profile-image {
+
+        width: 280px;
+        height: 280px;
       }
 
       .nav-links {
@@ -281,43 +328,22 @@
 
     <div class="nav-links">
 
-      <a href="">About</a>
-      <a href="">Projects</a>
+      <a href="#projects">Projects</a>
       <a href="">Skills</a>
       <a href="">Contact</a>
 
     </div>
 
-    <a
-      class="resume-btn"
-      href="https://github.com/404zay"
-      target="_blank"
-    >
-      GitHub
-    </a>
-
   </nav>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
 
   <section class="hero">
 
     <div class="hero-left">
 
-      <div class="badges">
-
-        <div class="badge">
-          Chess Engine
-        </div>
-
-        <div class="badge">
-          Python Developer
-        </div>
-
-        <div class="badge">
-          AI + Strategy
-        </div>
-
+      <div class="tag">
+        Chess AI • Frontend • Systems Thinking
       </div>
 
       <h1>
@@ -330,50 +356,33 @@
       </h1>
 
       <div class="subtitle">
-        Building Systems Through Code
+        Building products through code and strategy.
       </div>
 
       <div class="description">
 
-        Computer science and product-focused builder exploring
-        chess AI, minimax search trees, strategic systems,
-        and interactive frontend experiences.
+        UGA student exploring chess engines,
+        AI systems, frontend design,
+        and interactive product experiences.
 
       </div>
 
       <div class="buttons">
 
         <a
-          class="primary-btn"
-          href="https://github.com/404zay/chess-engine"
-          target="_blank"
+          class="btn primary"
+          href="#projects"
         >
-          View Project
+          View Projects
         </a>
 
         <a
-          class="secondary-btn"
+          class="btn secondary"
           href="https://github.com/404zay"
           target="_blank"
         >
-          GitHub Profile
+          GitHub
         </a>
-
-      </div>
-
-      <div class="info-row">
-
-        <div>
-          Athens, GA
-        </div>
-
-        <div>
-          UGA Terry College
-        </div>
-
-        <div>
-          Chess Engine Project
-        </div>
 
       </div>
 
@@ -383,8 +392,78 @@
 
       <img
         class="profile-image"
-        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop"
+        src="profile.jpg"
       >
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section
+    class="projects"
+    id="projects"
+  >
+
+    <h2 class="section-title">
+      Featured Projects
+    </h2>
+
+    <div class="project-grid">
+
+      <!-- PROJECT CARD -->
+
+      <div class="project-card">
+
+        <h3>
+          Chess Engine
+        </h3>
+
+        <p>
+
+          Building a chess engine from scratch
+          to understand minimax search trees,
+          legal move generation,
+          evaluation systems,
+          and strategic AI decision-making.
+
+        </p>
+
+        <a
+          class="project-link"
+          href="https://github.com/404zay/chess-engine"
+          target="_blank"
+        >
+          View Repository →
+        </a>
+
+      </div>
+
+      <!-- FUTURE CARD -->
+
+      <div class="project-card">
+
+        <h3>
+          Ponderly
+        </h3>
+
+        <p>
+
+          Interactive debate and trend platform
+          exploring how users engage with
+          arguments, evidence, and public opinion.
+
+        </p>
+
+        <a
+          class="project-link"
+          href="#"
+        >
+          Coming Soon →
+        </a>
+
+      </div>
 
     </div>
 
