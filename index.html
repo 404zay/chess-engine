@@ -1,21 +1,155 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>404zay Chess Engine</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      background-color: #0d0d0d;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .hero {
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 0 10%;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #1f1f1f;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #bdbdbd;
+    }
+
+    h1 {
+      font-size: 64px;
+      margin: 0;
+      line-height: 1.1;
+    }
+
+    .gradient {
+      background: linear-gradient(to right, #6a5cff, #4ba3ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 24px;
+      margin-top: 18px;
+      color: #9f9f9f;
+    }
+
+    .description {
+      margin-top: 30px;
+      line-height: 1.8;
+      font-size: 18px;
+      color: #cfcfcf;
+    }
+
+    .buttons {
+      margin-top: 40px;
+      display: flex;
+      gap: 16px;
+    }
+
+    .btn {
+      padding: 14px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .primary {
+      background: #4f7cff;
+      color: white;
+    }
+
+    .secondary {
+      border: 1px solid #444;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+  </style>
+
 </head>
 
-<body style="background-color:black; color:white; font-family:Arial; text-align:center; padding-top:100px;">
+<body>
 
-  <h1>Chess Engine From Scratch</h1>
+  <section class="hero">
 
-  <p>
-    Building a chess engine to understand AI, strategy,
-    minimax search trees, and decision-making.
-  </p>
+    <div class="hero-content">
 
-  <p>
-    Created by Isaiah.
-  </p>
+      <div class="tag">
+        Chess AI • Minimax • Python
+      </div>
+
+      <h1>
+        Building a
+        <span class="gradient">
+          Chess Engine
+        </span>
+        From Scratch
+      </h1>
+
+      <div class="subtitle">
+        Learning strategy, AI systems, and search trees through code.
+      </div>
+
+      <div class="description">
+        This project explores how chess engines think:
+        board representation, legal move generation,
+        minimax decision-making, alpha-beta pruning,
+        and long-term strategic evaluation.
+      </div>
+
+      <div class="buttons">
+
+        <a
+          class="btn primary"
+          href="https://github.com/404zay/chess-engine"
+          target="_blank"
+        >
+          View Project
+        </a>
+
+        <a
+          class="btn secondary"
+          href="https://github.com/404zay"
+          target="_blank"
+        >
+          GitHub Profile
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
 
 </body>
+
 </html>
