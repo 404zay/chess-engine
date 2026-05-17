@@ -1,476 +1,848 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <title>404zay Portfolio</title>
-
-  <!-- FONT -->
+  <title>Isaiah Campusano</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
   <style>
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --surface2: #181818;
+      --border: rgba(255,255,255,0.07);
+      --text: #e8e8e8;
+      --muted: #7a7a7a;
+      --accent: #4f7cff;
+      --accent2: #7b4dff;
+      --green: #3ecf8e;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
-
-      font-family: 'Inter', sans-serif;
-
-      background: #0d0d0d;
-      color: white;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    /* NAVBAR */
-
+    /* ── NAVBAR ── */
     nav {
-
+      position: fixed;
+      top: 0;
       width: 100%;
-      padding: 28px 10%;
-
+      padding: 20px 10%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-
-      position: fixed;
-      top: 0;
-
-      background: rgba(13,13,13,0.8);
-      backdrop-filter: blur(12px);
-
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-
-      z-index: 1000;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: 800;
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      letter-spacing: 0.02em;
     }
 
-    .nav-links {
-
-      display: flex;
-      gap: 36px;
-    }
+    .nav-links { display: flex; gap: 32px; }
 
     .nav-links a {
-
+      color: var(--muted);
       text-decoration: none;
-      color: #a1a1a1;
+      font-size: 15px;
       font-weight: 500;
-
-      transition: 0.2s ease;
+      transition: color 0.2s;
     }
+    .nav-links a:hover { color: var(--text); }
 
-    .nav-links a:hover {
-      color: white;
-    }
+    /* ── SHARED SECTION WRAPPER ── */
+    section { padding: 120px 10%; }
 
-    /* HERO */
-
-    .hero {
-
-      min-height: 100vh;
-
-      display: flex;
-      justify-content: center;
+    .section-label {
+      display: inline-flex;
       align-items: center;
-
-      gap: 100px;
-
-      padding: 160px 10%;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
     }
 
-    .hero-left {
-      max-width: 650px;
+    .section-label span {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
     }
 
-    .tag {
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 56px;
+    }
 
-      display: inline-block;
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      padding: 140px 10% 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-      padding: 10px 18px;
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
 
-      background: #1c1c1c;
-
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: 999px;
-
-      color: #b5b5b5;
-      font-size: 14px;
-
-      margin-bottom: 28px;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
     }
 
-    h1 {
-
-      font-size: 82px;
-      line-height: 1.05;
-
-      margin-bottom: 18px;
+    .badge-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
     }
 
-    .gradient {
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(52px, 7vw, 96px);
+      line-height: 1.02;
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
 
-      background: linear-gradient(
-        to right,
-        #4f7cff,
-        #7b4dff
-      );
-
+    .hero h1 em {
+      font-style: italic;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .subtitle {
-
-      font-size: 28px;
-      color: #9a9a9a;
-
-      margin-bottom: 34px;
+    .hero-sub {
+      max-width: 580px;
+      font-size: 19px;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 44px;
     }
 
-    .description {
-
-      font-size: 20px;
-      line-height: 1.8;
-
-      color: #bdbdbd;
-
-      margin-bottom: 42px;
-    }
-
-    .buttons {
-
+    .hero-meta {
       display: flex;
-      gap: 18px;
+      align-items: center;
+      gap: 20px;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 40px;
     }
+
+    .hero-meta span { display: flex; align-items: center; gap: 6px; }
+
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
 
     .btn {
-
-      padding: 16px 28px;
-
-      border-radius: 14px;
-
-      text-decoration: none;
+      padding: 14px 26px;
+      border-radius: 12px;
+      font-size: 15px;
       font-weight: 600;
-
-      transition: 0.25s ease;
+      text-decoration: none;
+      transition: all 0.22s ease;
+      cursor: pointer;
     }
 
-    .primary {
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-primary:hover { background: #3d6aee; transform: translateY(-2px); }
 
-      background: #4f7cff;
-      color: white;
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-2px); }
+
+    .hero-scroll {
+      margin-top: 80px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--muted);
     }
 
-    .secondary {
-
-      border: 1px solid rgba(255,255,255,0.12);
-      color: white;
+    .scroll-line {
+      width: 40px; height: 1px;
+      background: var(--border);
     }
 
-    .btn:hover {
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--bg); }
 
+    .exp-cards { display: flex; flex-direction: column; gap: 20px; }
+
+    .exp-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px 36px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .exp-card:hover {
+      border-color: rgba(79,124,255,0.3);
       transform: translateY(-3px);
     }
 
-    /* PROFILE IMAGE */
-
-    .profile-image {
-
-      width: 380px;
-      height: 380px;
-
-      border-radius: 50%;
-
-      object-fit: cover;
-
-      border: 5px solid #6a5cff;
-
-      box-shadow:
-        0 20px 60px rgba(0,0,0,0.4);
-
-      transition: 0.3s ease;
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 8px;
     }
 
-    .profile-image:hover {
-
-      transform: scale(1.02);
+    .exp-org {
+      font-size: 18px;
+      font-weight: 700;
     }
 
-    /* PROJECTS SECTION */
-
-    .projects {
-
-      padding: 120px 10%;
+    .exp-role {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 4px;
     }
 
-    .section-title {
-
-      font-size: 52px;
-      margin-bottom: 60px;
+    .exp-date {
+      font-size: 13px;
+      color: var(--muted);
+      white-space: nowrap;
     }
 
-    .project-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(auto-fit, minmax(320px, 1fr));
-
-      gap: 32px;
+    .exp-bullets {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
+
+    .exp-bullet {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      color: #bbb;
+      line-height: 1.6;
+    }
+
+    .exp-bullet::before {
+      content: '↗';
+      color: var(--accent);
+      font-size: 12px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* ── PROJECTS ── */
+    #projects { background: var(--surface); }
+
+    .project-cards { display: flex; flex-direction: column; gap: 20px; }
 
     .project-card {
-
-      background: #161616;
-
-      border: 1px solid rgba(255,255,255,0.06);
-
-      border-radius: 24px;
-
-      padding: 32px;
-
-      transition: 0.25s ease;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px;
+      transition: border-color 0.2s, transform 0.2s;
     }
-
     .project-card:hover {
-
-      transform: translateY(-6px);
-
-      border-color: rgba(106,92,255,0.4);
+      border-color: rgba(79,124,255,0.35);
+      transform: translateY(-4px);
     }
 
     .project-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px;
+      font-weight: 400;
+      margin-bottom: 4px;
+    }
 
-      font-size: 30px;
-      margin-bottom: 18px;
+    .project-meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 16px;
     }
 
     .project-card p {
-
-      color: #b5b5b5;
-
-      line-height: 1.7;
-
-      margin-bottom: 26px;
+      font-size: 15px;
+      color: #aaa;
+      line-height: 1.75;
+      margin-bottom: 20px;
     }
+
+    .project-highlight {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 14px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .project-highlight::before { content: '↗'; color: var(--green); }
 
     .project-link {
-
-      text-decoration: none;
-
-      color: #6a5cff;
-
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
       font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .project-link:hover { gap: 12px; }
+
+    /* ── THOUGHTS ── */
+    #thoughts { background: var(--bg); }
+
+    .thought-cards { display: flex; flex-direction: column; gap: 16px; }
+
+    .thought-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      transition: border-color 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+    .thought-card:hover {
+      border-color: rgba(79,124,255,0.3);
+      transform: translateY(-3px);
     }
 
-    /* RESPONSIVE */
-
-    @media screen and (max-width: 1100px) {
-
-      .hero {
-
-        flex-direction: column;
-        text-align: center;
-      }
-
-      h1 {
-        font-size: 58px;
-      }
-
-      .buttons {
-        justify-content: center;
-      }
-
-      .profile-image {
-
-        width: 280px;
-        height: 280px;
-      }
-
-      .nav-links {
-        display: none;
-      }
+    .thought-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
     }
 
+    .thought-cat {
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .thought-date { font-size: 12px; color: var(--muted); }
+    .thought-read { font-size: 12px; color: var(--muted); }
+
+    .thought-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .thought-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .read-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+    .read-link:hover { gap: 10px; }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--surface); }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-group {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .skill-group h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-pill {
+      padding: 6px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--bg);
+      text-align: center;
+    }
+
+    #contact .section-label { justify-content: center; }
+    #contact .section-title { margin-bottom: 14px; }
+
+    .contact-sub {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 56px;
+      line-height: 1.7;
+    }
+
+    .contact-cards {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+      min-width: 170px;
+    }
+    .contact-card:hover {
+      border-color: rgba(79,124,255,0.35);
+      transform: translateY(-4px);
+    }
+
+    .contact-icon { font-size: 28px; }
+
+    .contact-card strong {
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .contact-card small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 18px 6%; }
+      .nav-links { display: none; }
+      section { padding: 80px 6%; }
+      .hero { padding: 120px 6% 60px; }
+      .exp-header { flex-direction: column; gap: 4px; }
+      .section-title { font-size: 36px; }
+      footer { flex-direction: column; gap: 8px; text-align: center; }
+    }
   </style>
-
 </head>
-
 <body>
 
   <!-- NAVBAR -->
-
   <nav>
-
-    <div class="logo">
-      404zay
+    <div class="logo">IC</div>
+    <div class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#thoughts">Thoughts</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </div>
-
-<div class="nav-links">
-
-  <a href="#projects">Projects</a>
-
-  <a href="#blog">Blog</a>
-
-  <a href="#contact">Contact</a>
-
-
-  </div>
-
   </nav>
 
-  <!-- HERO -->
-
+  <!-- ── HERO ── -->
   <section class="hero">
 
-    <div class="hero-left">
-
-      <div class="tag">
-        Frontend 
-      </div>
-
-      <h1>
-
-        Hi, I'm
-        <span class="gradient">
-          Isaiah
-        </span>
-
-      </h1>
-
-      <div class="subtitle">
-        building...
-      </div>
-
-      <div class="description">
-
-        clash is like chess
-
-      </div>
-
-      <div class="buttons">
-
-        <a
-          class="btn primary"
-          href="#projects"
-        >
-          View Projects
-        </a>
-
-    <a
-  class="btn secondary"
-  href="#contact"
->
-  Contact Me
-</a>
-  Featured Projects
-
-</a>
-      </div>
-
+    <div class="hero-badges">
+      <div class="badge"><span class="badge-dot"></span> JPMorgan Chase · Incoming Analyst</div>
+      <div class="badge">📍 UGA Terry College of Business</div>
+      <div class="badge">Silicon Valley Seminar</div>
     </div>
 
-    <div class="hero-right">
+    <h1>
+      Hi, I'm<br>
+      <em>Isaiah</em>
+    </h1>
 
-      <img
-        class="profile-image"
-        src="profile.jpg"
-      >
+    <p class="hero-sub">
+      Business + Product + Systems Thinking.<br>
+      Building consumer products at the intersection of fintech, gaming, and behavioral design.
+    </p>
 
+    <div class="hero-meta">
+      <span>📍 Athens, GA</span>
+      <span style="color:var(--border)">•</span>
+      <span>🎓 Expected May 2026</span>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="#projects" class="btn btn-primary">View Work</a>
+      <a href="#contact" class="btn btn-ghost">Contact Me</a>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      Scroll to explore
     </div>
 
   </section>
 
-  <!-- PROJECTS -->
+  <!-- ── EXPERIENCE ── -->
+  <section id="experience">
+    <div class="section-label"><span></span> Experience</div>
+    <h2 class="section-title">Where I've Been</h2>
 
-  <section
-    class="projects"
-    id="projects"
-  >
+    <div class="exp-cards">
 
-    <h2 class="section-title">
-      Featured Projects
-    </h2>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-org">JPMorgan Chase</div>
+            <div class="exp-role">Summer Analyst</div>
+          </div>
+          <div class="exp-date">Summer 2025</div>
+        </div>
+        <div class="exp-bullets">
+          <div class="exp-bullet">Incoming analyst role in financial services, pending start date.</div>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Finance</span>
+          <span class="tag">Product</span>
+          <span class="tag">Fintech</span>
+        </div>
+      </div>
 
-    <div class="project-grid">
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-org">Silicon Valley Seminar</div>
+            <div class="exp-role">Participant</div>
+          </div>
+          <div class="exp-date">2024</div>
+        </div>
+        <div class="exp-bullets">
+          <div class="exp-bullet">Embedded with Bay Area startups and VCs to study product culture, go-to-market, and early-stage company building.</div>
+          <div class="exp-bullet">Networked with founders and investors across consumer, SaaS, and deep tech verticals.</div>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Startups</span>
+          <span class="tag">Venture</span>
+          <span class="tag">Product Strategy</span>
+        </div>
+      </div>
 
-      <!-- PROJECT CARD -->
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-org">UGA Terry College of Business</div>
+            <div class="exp-role">Student · Management Information Systems</div>
+          </div>
+          <div class="exp-date">2022 – 2026</div>
+        </div>
+        <div class="exp-bullets">
+          <div class="exp-bullet">Coursework spanning business analytics, systems design, and digital strategy.</div>
+          <div class="exp-bullet">Active in product and entrepreneurship communities on campus.</div>
+        </div>
+        <div class="tag-row">
+          <span class="tag">MIS</span>
+          <span class="tag">Business Analytics</span>
+          <span class="tag">UGA</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section id="projects">
+    <div class="section-label"><span></span> Projects</div>
+    <h2 class="section-title">Featured Work</h2>
+
+    <div class="project-cards">
 
       <div class="project-card">
-
-        <h3>
-          Chess Engine
-        </h3>
-
+        <h3>Chess Engine</h3>
+        <div class="project-meta">Personal Project · 2024 – Present</div>
         <p>
-
-          Building a chess engine from scratch
-          to understand minimax search trees,
-          legal move generation,
-          evaluation systems,
-          and strategic AI decision-making.
-
+          Building a chess engine from scratch to understand minimax search trees,
+          legal move generation, evaluation heuristics, and strategic AI decision-making.
+          The same systems logic that powers games powers products.
         </p>
-
-        <a
-          class="project-link"
-          href="https://github.com/404zay/chess-engine"
-          target="_blank"
-        >
+        <div class="project-highlight">
+          Implemented alpha-beta pruning to reduce search space and improve move quality under time constraints
+        </div>
+        <div class="tag-row" style="margin-bottom:20px">
+          <span class="tag">Python</span>
+          <span class="tag">AI / Search Trees</span>
+          <span class="tag">Game Theory</span>
+        </div>
+        <a href="https://github.com/404zay/chess-engine" target="_blank" class="project-link">
           View Repository →
         </a>
-
       </div>
 
-      <!-- FUTURE CARD -->
+      <div class="project-card">
+        <h3>Strava University Feed</h3>
+        <div class="project-meta">Product Concept · 2024</div>
+        <p>
+          Reimagining social fitness through university identity. A concept that explores
+          how Strava could deepen engagement by surfacing campus-level leaderboards,
+          club activity, and school-branded challenges.
+        </p>
+        <div class="project-highlight">
+          Identified the gap between generic social feeds and identity-driven community — the same insight behind Bereal's campus growth
+        </div>
+        <div class="tag-row" style="margin-bottom:20px">
+          <span class="tag">Product Design</span>
+          <span class="tag">Social UX</span>
+          <span class="tag">Consumer</span>
+        </div>
+        <a href="#" class="project-link">View Concept →</a>
+      </div>
 
       <div class="project-card">
-
-        <h3>
-          Ponderly
-        </h3>
-
+        <h3>Ponderly</h3>
+        <div class="project-meta">In Development · 2025</div>
         <p>
-
-          Interactive debate and trend platform
-          exploring how users engage with
-          arguments, evidence, and public opinion.
-
+          Interactive debate and public opinion platform exploring how users engage with
+          arguments, evidence, and evolving positions. Built around the idea that people
+          change their minds through structure, not noise.
         </p>
-
-        <a
-          class="project-link"
-          href="#"
-        >
-          Coming Soon →
-        </a>
-
+        <div class="project-highlight">
+          Designing argument graphs that let users trace how their view evolved across a debate thread
+        </div>
+        <div class="tag-row" style="margin-bottom:20px">
+          <span class="tag">Full Stack</span>
+          <span class="tag">Behavioral Design</span>
+          <span class="tag">Consumer</span>
+        </div>
+        <a href="#" class="project-link">Coming Soon →</a>
       </div>
 
     </div>
-
   </section>
 
-</body>
+  <!-- ── THOUGHTS ── -->
+  <section id="thoughts">
+    <div class="section-label"><span></span> Blog</div>
+    <h2 class="section-title">Thoughts & Insights</h2>
 
+    <div class="thought-cards">
+
+      <div class="thought-card">
+        <div class="thought-top">
+          <span class="thought-cat">Product</span>
+          <span class="thought-date">📅 Coming Soon</span>
+          <span class="thought-read">⏱ 5 min read</span>
+        </div>
+        <h3>Why Clash Royale Feels Like Chess</h3>
+        <p>On resource management, tempo, and how mobile card games teach better strategic intuition than most business frameworks.</p>
+        <a href="#" class="read-link">Read Article →</a>
+      </div>
+
+      <div class="thought-card">
+        <div class="thought-top">
+          <span class="thought-cat">Consumer</span>
+          <span class="thought-date">📅 Coming Soon</span>
+          <span class="thought-read">⏱ 6 min read</span>
+        </div>
+        <h3>What Strava Gets Right About Social Identity</h3>
+        <p>Strava isn't a fitness app — it's a social network for the identity of "being a person who runs." Why that distinction matters for product builders.</p>
+        <a href="#" class="read-link">Read Article →</a>
+      </div>
+
+      <div class="thought-card">
+        <div class="thought-top">
+          <span class="thought-cat">Systems</span>
+          <span class="thought-date">📅 Coming Soon</span>
+          <span class="thought-read">⏱ 4 min read</span>
+        </div>
+        <h3>Good Products Reduce Friction, Not Intelligence</h3>
+        <p>The best apps don't make you smarter — they remove the cognitive overhead so you can use the intelligence you already have.</p>
+        <a href="#" class="read-link">Read Article →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section id="skills">
+    <div class="section-label"><span></span> Skills</div>
+    <h2 class="section-title">Technical Expertise</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-group">
+        <h4>Languages</h4>
+        <div class="skill-pills">
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">JavaScript</span>
+          <span class="skill-pill">HTML / CSS</span>
+          <span class="skill-pill">SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Tools & Frameworks</h4>
+        <div class="skill-pills">
+          <span class="skill-pill">React</span>
+          <span class="skill-pill">Node.js</span>
+          <span class="skill-pill">Git / GitHub</span>
+          <span class="skill-pill">Figma</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Domain Knowledge</h4>
+        <div class="skill-pills">
+          <span class="skill-pill">Product Strategy</span>
+          <span class="skill-pill">Behavioral Design</span>
+          <span class="skill-pill">Financial Analysis</span>
+          <span class="skill-pill">Systems Thinking</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Coursework</h4>
+        <div class="skill-pills">
+          <span class="skill-pill">Business Analytics</span>
+          <span class="skill-pill">MIS</span>
+          <span class="skill-pill">Data Structures</span>
+          <span class="skill-pill">Digital Strategy</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="section-label"><span></span> Get in Touch</div>
+    <h2 class="section-title">Let's Build Something</h2>
+    <p class="contact-sub">
+      Always open to discussing product ideas, opportunities, or just talking systems and games.
+    </p>
+
+    <div class="contact-cards">
+      <a href="mailto:your@email.com" class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <strong>Email</strong>
+        <small>your@email.com</small>
+      </a>
+      <a href="https://linkedin.com/in/yourhandle" target="_blank" class="contact-card">
+        <div class="contact-icon">💼</div>
+        <strong>LinkedIn</strong>
+        <small>Connect with me</small>
+      </a>
+      <a href="https://github.com/404zay" target="_blank" class="contact-card">
+        <div class="contact-icon">⌨️</div>
+        <strong>GitHub</strong>
+        <small>See my code</small>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2026 Isaiah Campusano. All rights reserved.</span>
+    <span style="display:flex;gap:20px">
+      <a href="mailto:your@email.com" style="color:var(--muted);text-decoration:none">✉️</a>
+      <a href="https://linkedin.com/in/yourhandle" target="_blank" style="color:var(--muted);text-decoration:none">💼</a>
+      <a href="https://github.com/404zay" target="_blank" style="color:var(--muted);text-decoration:none">⌨️</a>
+    </span>
+  </footer>
+
+</body>
 </html>
