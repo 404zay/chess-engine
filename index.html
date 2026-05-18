@@ -4,11 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Isaiah Campusano</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --bg: #0a0a0a;
@@ -116,7 +114,6 @@
     }
 
     /* HERO */
-
     .hero {
       min-height: 100vh;
       padding: 140px 10% 80px;
@@ -162,11 +159,12 @@
     }
 
     .hero h1 em {
-      font-style: italic;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+  font-style: italic;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
     .hero-sub {
       max-width: 620px;
@@ -288,8 +286,37 @@
       line-height: 1.7;
     }
 
-    /* EXPERIENCE */
+    /* PRODUCT BRIEF */
+    .product-brief {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
 
+    .brief-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .brief-card h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    .brief-card p {
+      font-size: 14px;
+      color: #aaa;
+      line-height: 1.7;
+    }
+
+    /* EXPERIENCE */
     #experience {
       background: var(--bg);
     }
@@ -380,7 +407,6 @@
     }
 
     /* PROJECTS */
-
     #projects {
       background: var(--surface);
     }
@@ -666,7 +692,6 @@
     }
 
     /* BLOG */
-
     #blog {
       background: var(--bg);
     }
@@ -740,7 +765,6 @@
     }
 
     /* CONTACT ME */
-
     #contact-me {
       background: var(--surface);
       text-align: center;
@@ -814,6 +838,12 @@
       background: var(--bg);
     }
 
+    @media (max-width: 1200px) {
+      .product-brief {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
@@ -855,48 +885,49 @@
         gap: 8px;
         text-align: center;
       }
+
+      .product-brief {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
-
 <body>
-
   <nav>
     <div class="logo">IC</div>
-
     <div class="nav-links">
+      <a href="#product-brief">Brief</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#blog">Blog</a>
-      <a href="#contact-me">Contact Me</a>
+      <a href="#contact-me">Contact</a>
     </div>
   </nav>
 
   <section class="hero">
-
     <div class="hero-copy">
       <div class="hero-badges">
-        <div class="badge"><span class="badge-dot"></span> JPMorgan Chase · Incoming Analyst</div>
-        <div class="badge">UGA Terry College of Business</div>
-        <div class="badge">Jira Automations</div>
-        <div class="badge">Product Prototypes</div>
+        <div class="badge"><span class="badge-dot"></span> UGA Terry College of Business</div>
+        <div class="badge">Math Minor</div>
+        <div class="badge">Product</div>
+        <div class="badge">Analytics</div>
+        <div class="badge">Fintech</div>
       </div>
 
-      <h1>
-        Hi, I'm<br>
-        <em>Isaiah</em>
-      </h1>
+      <h1>Isaiah Campusano</h1>
 
       <p class="hero-sub">
-        <strong>UGA business student building product prototypes, workflow automations, and technical side projects.</strong>
-        <br><br>
-        Focused on fintech, consumer apps, gaming systems, and tools that reduce friction.
+        I’m Isaiah Campusano, a UGA Terry College of Business student with a math minor.<br><br>
+        <strong>I build product prototypes, workflow automations, and technical experiments across fintech, consumer apps, and games.</strong><br><br>
+        I’m interested in product, analytics, fintech, and tech roles.
       </p>
 
       <div class="hero-meta">
-        <span>📍 Athens, GA</span>
-        <span style="color:var(--border)">•</span>
-        <span>🎓 Expected December 2026</span>
+        <span>Product-minded builder</span>
+        <span>•</span>
+        <span>Systems thinking</span>
+        <span>•</span>
+        <span>Open to product, analytics, fintech, and tech roles</span>
       </div>
 
       <div class="hero-ctas">
@@ -917,9 +948,7 @@
             <div class="visual-block"></div>
             <div class="visual-block"></div>
           </div>
-
           <div class="visual-block large"></div>
-
           <div class="visual-row" style="margin-top:14px;">
             <div class="visual-block"></div>
             <div class="visual-block"></div>
@@ -929,22 +958,54 @@
       </div>
 
       <p class="visual-caption">
-        I use small projects to study how people move through products, where friction appears, and how clearer systems can reduce unnecessary steps.
+        I use small projects to test how product decisions affect clarity, speed, and trust.
       </p>
     </div>
+  </section>
 
+  <section id="product-brief">
+    <div class="section-label"><span></span> Product Brief</div>
+    <h2 class="section-title">Why this portfolio exists</h2>
+    <p class="section-subtitle">
+      A quick read on the purpose of this redesign and what it should communicate fast.
+    </p>
+
+    <div class="product-brief">
+      <div class="brief-card">
+        <h4>Problem</h4>
+        <p>Recruiters, PMs, and builders need to quickly understand who I am, what I’ve recently been building, and why those projects matter.</p>
+      </div>
+
+      <div class="brief-card">
+        <h4>Goal</h4>
+        <p>Make the page stand on its own as a clear, recruiter-friendly portfolio that communicates value in seconds, not minutes.</p>
+      </div>
+
+      <div class="brief-card">
+        <h4>Users</h4>
+        <p>Technical recruiters, product managers, founders, and engineers evaluating fit for product, analytics, fintech, and technical roles.</p>
+      </div>
+
+      <div class="brief-card">
+        <h4>Scope</h4>
+        <p>Update copy, hierarchy, and messaging while keeping the dark visual style, cards, buttons, and responsive layout intact.</p>
+      </div>
+
+      <div class="brief-card">
+        <h4>Success</h4>
+        <p>Visitors understand my background, see the right projects, and know what kind of roles and conversations I’m open to.</p>
+      </div>
+    </div>
   </section>
 
   <section id="experience">
     <div class="section-label"><span></span> Experience</div>
-    <h2 class="section-title">Where I've Been</h2>
-
+    <h2 class="section-title">Where I’ve Been</h2>
     <p class="section-subtitle">
-      Finance, product exposure, research, and business systems work.
+      Product, operations, fintech systems, research, and business analytics exposure.
     </p>
 
     <div class="exp-cards">
-
       <div class="exp-card">
         <div class="exp-header">
           <div>
@@ -955,34 +1016,13 @@
         </div>
 
         <div class="exp-bullets">
-          <div class="exp-bullet">Incoming role in financial services.</div>
-          <div class="exp-bullet">Interested in how banking products can become clearer for younger users.</div>
+          <div class="exp-bullet">Focused on product and operations work, with an emphasis on workflow systems inside financial services.</div>
+          <div class="exp-bullet">Strengthened my interest in fintech by seeing how user experience, compliance, and operational complexity intersect.</div>
         </div>
 
         <div class="tag-row">
           <span class="tag">Finance</span>
           <span class="tag">Fintech</span>
-          <span class="tag">Consumer Banking</span>
-        </div>
-      </div>
-
-      <div class="exp-card">
-        <div class="exp-header">
-          <div>
-            <div class="exp-org">Georgia Tech Systems Engineering Research</div>
-            <div class="exp-role">Research Exposure / Project Work</div>
-          </div>
-          <div class="exp-date">2024</div>
-        </div>
-
-        <div class="exp-bullets">
-          <div class="exp-bullet">Studied systems engineering concepts through research exposure at Georgia Tech.</div>
-          <div class="exp-bullet">Connected systems thinking to operations, workflows, and decision-making.</div>
-        </div>
-
-        <div class="tag-row">
-          <span class="tag">Systems Engineering</span>
-          <span class="tag">Research</span>
           <span class="tag">Operations</span>
         </div>
       </div>
@@ -997,14 +1037,35 @@
         </div>
 
         <div class="exp-bullets">
-          <div class="exp-bullet">Coursework across business analytics, systems design, data, and digital strategy.</div>
-          <div class="exp-bullet">Building side projects across product design, workflow automation, and technical systems.</div>
+          <div class="exp-bullet">Studied business analytics, systems thinking, and data strategy while completing a math minor.</div>
+          <div class="exp-bullet">Built a systems-oriented approach to operations, workflows, and technical problem-solving.</div>
         </div>
 
         <div class="tag-row">
-          <span class="tag">MIS</span>
           <span class="tag">Business Analytics</span>
-          <span class="tag">UGA</span>
+          <span class="tag">Systems Thinking</span>
+          <span class="tag">Math Minor</span>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-org">Georgia Tech Systems Engineering Research</div>
+            <div class="exp-role">Research Exposure</div>
+          </div>
+          <div class="exp-date">2024</div>
+        </div>
+
+        <div class="exp-bullets">
+          <div class="exp-bullet">Gained exposure to systems engineering methods and how to break complex problems into manageable parts.</div>
+          <div class="exp-bullet">Connected that lens to how products are designed, evaluated, and operated at scale.</div>
+        </div>
+
+        <div class="tag-row">
+          <span class="tag">Systems Engineering</span>
+          <span class="tag">Research</span>
+          <span class="tag">Operations</span>
         </div>
       </div>
 
@@ -1018,56 +1079,51 @@
         </div>
 
         <div class="exp-bullets">
-          <div class="exp-bullet">Visited startups, technology companies, and venture firms across the Bay Area.</div>
-          <div class="exp-bullet">Studied how product teams think about users, growth, and early-stage company building.</div>
+          <div class="exp-bullet">Visited product teams, founders, and companies across the Bay Area to see how ideas become products.</div>
+          <div class="exp-bullet">Learned how teams think about venture, growth, users, and the realities of company building.</div>
         </div>
 
         <div class="tag-row">
-          <span class="tag">Startups</span>
           <span class="tag">Product Strategy</span>
+          <span class="tag">Startups</span>
           <span class="tag">Venture</span>
         </div>
       </div>
-
     </div>
   </section>
 
   <section id="projects">
     <div class="section-label"><span></span> Projects</div>
     <h2 class="section-title">Featured Work</h2>
-
     <p class="section-subtitle">
       Side projects where I use product thinking, design, and code to study how better systems work.
     </p>
 
     <div class="project-cards">
-
       <div class="project-card">
         <div>
           <h3>Chase App Redesign</h3>
-          <div class="project-meta">Product Design · Figma · Completed</div>
-
+          <div class="project-meta">Product Design · Figma · High-Fidelity</div>
           <p>
-            Redesigned the Chase mobile app around how many 18–24 year olds actually use banking apps: checking balances, sending money, and tracking spending.
+            A high-fidelity Figma redesign of the Chase mobile app that simplifies tabs, reduces cluttered communication, and makes core actions easier to find—especially for older adults—drawing inspiration from apps like Uber.
           </p>
 
           <ul class="project-list">
-            <li>Reduced clutter from low-relevance products like home lending and auto loans.</li>
-            <li>Simplified navigation with a flatter structure inspired by Cash App.</li>
-            <li>Explored a cleaner spending history view focused on faster understanding.</li>
+            <li>Simplified the tab structure to reduce clutter and decision fatigue.</li>
+            <li>Removed lower-priority content that adds noise instead of clarity.</li>
+            <li>Designed the experience to feel more approachable for older adults and new users.</li>
           </ul>
 
           <div class="tag-row">
             <span class="tag">Figma</span>
             <span class="tag">UX Design</span>
             <span class="tag">Fintech</span>
-            <span class="tag">Consumer Apps</span>
+            <span class="tag">Accessibility</span>
           </div>
         </div>
 
         <div class="project-visual">
           <div class="project-visual-label">App prototype placeholder</div>
-
           <div class="phone-frame">
             <div class="phone-pill"></div>
             <div class="ui-line medium"></div>
@@ -1083,28 +1139,26 @@
       <div class="project-card">
         <div>
           <h3>Jira Workflow Automations</h3>
-          <div class="project-meta">Automation Project · Jira · Workflow Design</div>
-
+          <div class="project-meta">Automation · Jira · Workflow Design</div>
           <p>
-            Built Jira automations to reduce manual project tracking work and make task movement easier to manage.
+            Workflow rules built to reduce manual tracking and make task handoffs clearer, faster, and easier to follow.
           </p>
 
           <ul class="project-list">
-            <li>Mapped repeated project updates into clearer workflow steps.</li>
-            <li>Used automation logic to reduce manual status tracking.</li>
-            <li>Focused on making handoffs easier to see and manage.</li>
+            <li>Created rules that cut down on repeated status updates.</li>
+            <li>Reduced manual tracking with conditional logic and triggers.</li>
+            <li>Made handoffs between teammates more visible and easier to follow.</li>
           </ul>
 
           <div class="tag-row">
             <span class="tag">Jira</span>
             <span class="tag">Automation</span>
-            <span class="tag">Workflow Design</span>
+            <span class="tag">Operations</span>
           </div>
         </div>
 
         <div class="project-visual">
           <div class="project-visual-label">Workflow logic</div>
-
           <div class="automation-preview">
             <div class="automation-step">
               <div>
@@ -1113,7 +1167,6 @@
               </div>
               <span class="status-pill">Start</span>
             </div>
-
             <div class="automation-step">
               <div>
                 <strong>Assign owner</strong>
@@ -1121,7 +1174,6 @@
               </div>
               <span class="status-pill">Rule</span>
             </div>
-
             <div class="automation-step">
               <div>
                 <strong>Move task</strong>
@@ -1136,28 +1188,26 @@
       <div class="project-card">
         <div>
           <h3>Strava University Feed</h3>
-          <div class="project-meta">Product Concept · In Progress</div>
-
+          <div class="project-meta">Product Concept · Campus Discovery</div>
           <p>
-            Built a concept for a university-focused Strava feed that separates close friends from broader campus activity.
+            A campus/social discovery concept for Strava that makes fitness feel more local, relevant, and community-driven.
           </p>
 
           <ul class="project-list">
-            <li>Inspired by BeReal's friends vs discovery structure.</li>
-            <li>Explores school verification, campus activity, and university-based discovery.</li>
-            <li>Focused on making fitness feel more social without turning it into another noisy feed.</li>
+            <li>Explores school verification and campus-scoped activity feeds.</li>
+            <li>Separates closer social circles from broader university discovery.</li>
+            <li>Reframes fitness as a social layer inside a university community.</li>
           </ul>
 
           <div class="tag-row">
             <span class="tag">Product Design</span>
-            <span class="tag">Consumer Social</span>
+            <span class="tag">Social Discovery</span>
             <span class="tag">Community</span>
           </div>
         </div>
 
         <div class="project-visual">
           <div class="project-visual-label">Feed concept</div>
-
           <div class="feed-preview">
             <div class="feed-card">
               <div class="feed-top">
@@ -1187,32 +1237,30 @@
       <div class="project-card">
         <div>
           <h3>Chess Engine</h3>
-          <div class="project-meta">Personal Project · Python · 2024 – Present</div>
-
+          <div class="project-meta">Technical Learning · Python · 2024–Present</div>
           <p>
-            Building a chess engine from scratch to understand how search, constraints, and evaluation systems work.
+            A chess engine built from scratch as a technical learning project about constraints, legal moves, evaluation, and search.
           </p>
 
           <ul class="project-list">
-            <li>Implemented minimax search and alpha-beta pruning.</li>
-            <li>Built legal move generation and board evaluation logic.</li>
-            <li>Used chess as a way to study decision-making under constraints.</li>
+            <li>Implemented legal move generation under board and game constraints.</li>
+            <li>Built search logic using minimax and alpha-beta pruning.</li>
+            <li>Designed evaluation logic to score positions and guide decisions.</li>
           </ul>
 
           <div class="tag-row">
             <span class="tag">Python</span>
             <span class="tag">Algorithms</span>
-            <span class="tag">Game Logic</span>
+            <span class="tag">Systems Design</span>
           </div>
 
-          <a href="https://github.com/404zay/chess-engine" target="_blank" class="project-link">
+          <a href="https://github.com/404zay/chess-engine" target="_blank" rel="noreferrer" class="project-link">
             View Repository →
           </a>
         </div>
 
         <div class="project-visual">
           <div class="project-visual-label">Board logic</div>
-
           <div class="chess-board">
             <div class="square light"></div><div class="square dark"></div><div class="square light"></div><div class="square dark"></div><div class="square light"></div><div class="square dark"></div><div class="square light"></div><div class="square dark"></div>
             <div class="square dark"></div><div class="square light"></div><div class="square dark"></div><div class="square light"></div><div class="square dark"></div><div class="square light"></div><div class="square dark"></div><div class="square light"></div>
@@ -1229,28 +1277,26 @@
       <div class="project-card">
         <div>
           <h3>Ponderly</h3>
-          <div class="project-meta">In Development · 2025</div>
-
+          <div class="project-meta">Product Concept · In Development</div>
           <p>
-            Interactive debate platform exploring how users track opinions, evidence, and changing viewpoints over time.
+            A debate and evidence product concept for structured disagreement—designed to help people track claims, trace evidence, and change their minds over time.
           </p>
 
           <ul class="project-list">
-            <li>Experimenting with argument graphs and evidence tracing.</li>
-            <li>Focused on structured disagreement instead of engagement-driven discussion.</li>
-            <li>Early-stage product concept with design and prototype work in progress.</li>
+            <li>Experiments with argument graphs and evidence tracking.</li>
+            <li>Focuses on structured discussion instead of engagement-driven debate.</li>
+            <li>Early-stage concept with design and prototype work in progress.</li>
           </ul>
 
           <div class="tag-row">
+            <span class="tag">Product Design</span>
             <span class="tag">Behavioral Design</span>
-            <span class="tag">Product Thinking</span>
             <span class="tag">Consumer</span>
           </div>
         </div>
 
         <div class="project-visual">
           <div class="project-visual-label">Argument graph placeholder</div>
-
           <div class="graph-preview">
             <div class="graph-line one"></div>
             <div class="graph-line two"></div>
@@ -1260,33 +1306,27 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
   <section id="blog">
     <div class="section-label"><span></span> Blog</div>
     <h2 class="section-title">Blog</h2>
-
     <p class="section-subtitle">
-      Short essays I am shaping from games, consumer apps, and systems I study.
+      Product notes and essays in progress on apps, games, and systems I’m studying.
     </p>
 
     <div class="blog-cards">
-
       <div class="blog-card">
         <div class="blog-top">
           <span class="blog-cat">Product</span>
           <span class="blog-read">5 min read</span>
         </div>
-
         <h3>Why Clash Royale Feels Like Chess</h3>
-
         <p>
           On resource management, tempo, and why mobile games can teach strategic intuition.
         </p>
-
-        <a href="#" class="read-link">Draft in Progress →</a>
+        <span class="read-link">Draft in Progress →</span>
       </div>
 
       <div class="blog-card">
@@ -1294,14 +1334,11 @@
           <span class="blog-cat">Consumer</span>
           <span class="blog-read">6 min read</span>
         </div>
-
         <h3>What Strava Gets Right About Social Identity</h3>
-
         <p>
           Strava works because it is not just a fitness tracker. It helps people perform and reinforce an identity.
         </p>
-
-        <a href="#" class="read-link">Draft in Progress →</a>
+        <span class="read-link">Draft in Progress →</span>
       </div>
 
       <div class="blog-card">
@@ -1309,23 +1346,18 @@
           <span class="blog-cat">Systems</span>
           <span class="blog-read">4 min read</span>
         </div>
-
         <h3>Good Products Reduce Friction, Not Intelligence</h3>
-
         <p>
           The best products remove extra steps so users can use the intelligence they already have.
         </p>
-
-        <a href="#" class="read-link">Draft in Progress →</a>
+        <span class="read-link">Draft in Progress →</span>
       </div>
-
     </div>
   </section>
 
   <section id="contact-me">
-    <div class="section-label"><span></span> Contact Me</div>
-    <h2 class="section-title">Contact Me</h2>
-
+    <div class="section-label"><span></span> Contact</div>
+    <h2 class="section-title">Get in touch</h2>
     <p class="contact-sub">
       Open to product, fintech, analytics, and technical project opportunities.
     </p>
@@ -1337,13 +1369,13 @@
         <small>your@email.com</small>
       </a>
 
-      <a href="https://linkedin.com/in/yourhandle" target="_blank" class="contact-card">
+      <a href="https://linkedin.com/in/yourhandle" target="_blank" rel="noreferrer" class="contact-card">
         <div class="contact-icon">💼</div>
         <strong>LinkedIn</strong>
         <small>Connect with me</small>
       </a>
 
-      <a href="https://github.com/404zay" target="_blank" class="contact-card">
+      <a href="https://github.com/404zay" target="_blank" rel="noreferrer" class="contact-card">
         <div class="contact-icon">⌨️</div>
         <strong>GitHub</strong>
         <small>See my code</small>
@@ -1353,13 +1385,11 @@
 
   <footer>
     <span>© 2026 Isaiah Campusano. All rights reserved.</span>
-
     <span style="display:flex;gap:20px">
       <a href="mailto:your@email.com" style="color:var(--muted);text-decoration:none">✉️</a>
-      <a href="https://linkedin.com/in/yourhandle" target="_blank" style="color:var(--muted);text-decoration:none">💼</a>
-      <a href="https://github.com/404zay" target="_blank" style="color:var(--muted);text-decoration:none">⌨️</a>
+      <a href="https://linkedin.com/in/yourhandle" target="_blank" rel="noreferrer" style="color:var(--muted);text-decoration:none">💼</a>
+      <a href="https://github.com/404zay" target="_blank" rel="noreferrer" style="color:var(--muted);text-decoration:none">⌨️</a>
     </span>
   </footer>
-
 </body>
 </html>
