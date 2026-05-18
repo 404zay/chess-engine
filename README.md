@@ -1,62 +1,100 @@
-`# Chess Engine From Scratch
+# 404zay — Portfolio
 
-## Overview
+Personal portfolio for showcasing my product, analytics, and front-end development work.
 
-This project is a fully functional chess engine built from scratch. It implements all core chess rules, including legal move validation, check/checkmate detection, and an AI decision-making system using the minimax algorithm with alpha-beta pruning.
+I’m Isaiah Campusano, a senior at the University of Georgia’s Terry College of Business with a math minor and interests across finance, product management, technology, and analytics. This portfolio is built to present my work more clearly: not just what I made, but why I made it, what problem it solves, and how I think through product decisions.
 
-## Features
+## Current Focus
 
-- **Board Representation**: An 8x8 chess board with piece positions and turn tracking.
-- **Piece Movement Logic**: Valid movement for all chess pieces, including special rules like castling and en passant.
-- **Legal Move Generation**: Generates all possible legal moves for a given board state.
-- **Check Detection**: Detects when a king is in check and prevents illegal moves that would leave the king in check.
-- **Endgame Systems**: Implements checkmate, stalemate detection, and pawn promotion.
-- **Evaluation Function**: Scores board states based on material values and positional factors.
-- **AI Decision System**: Uses the minimax algorithm with alpha-beta pruning for optimal move selection.
+I’m using this site as a public home base for:
 
-## Installation
+- Product case studies and prototypes
+- Front-end development projects
+- PM / operations / automation work
+- Notes on technology, finance, and user experience
+- Experiments that connect business thinking with technical execution
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   ```
-2. Navigate to the project directory:
-   ```
-   cd chess-engine
-   ```
-3. Install the required dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+## Recent Portfolio Improvements
 
-## Usage
+This version of the portfolio was redesigned to create a cleaner landing page with stronger hierarchy, clearer navigation, and better project storytelling.
 
-To run the chess engine, execute the following command:
-```
-python src/main.py
-```
+Key updates include:
 
-Follow the on-screen instructions to play against the AI.
+- Simplified the site structure so visitors can quickly understand who I am, what I’ve worked on, and how to contact me.
+- Reworked the navigation around clearer sections like **Projects**, **Experience**, **Blog**, and **Contact**.
+- Added stronger project framing so each project explains the problem, the goal, the scope, and the outcome.
+- Shifted the portfolio away from being just a profile page and toward being a product-style landing page.
+- Improved the visual direction with cleaner spacing, stronger section flow, and more intentional content hierarchy.
 
-## Testing
+## Featured Projects
 
-Unit tests are provided for various components of the chess engine. To run the tests, use:
-```
-pytest
-```
+### Chase App Redesign
 
-## Future Extensions
+A high-fidelity Figma concept redesigning the Chase mobile banking experience with a simplified interface.
 
-- Graphical User Interface (GUI)
-- Multiplayer support
-- Opening database integration
-- Comparison with other chess engines like Stockfish
-- Reinforcement learning for improved AI
+The goal was to reduce clutter and make the app easier to navigate, especially for users who may feel overwhelmed by too many tabs, alerts, and competing communication channels.
 
-## Contributing
+Inspired by the idea of simplified versions of complex apps, this redesign explores how banking could feel more focused, direct, and accessible.
 
-Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
+### Chess Game
 
-## License
+A Java-based chess project used to strengthen my understanding of programming logic, game rules, and systems thinking.
 
-This project is licensed under the MIT License. See the LICENSE file for more details.`
+The project helped me think through concepts like:
+
+- Board state
+- Legal moves
+- Piece behavior
+- Turn-based logic
+- Strategy evaluation
+- Building from rules into interaction
+
+This project also became part of my broader portfolio because chess reflects how I think about systems: constraints, decisions, tradeoffs, and future moves.
+
+### Ponderly Landing Page
+
+A landing page concept for Ponderly, a product idea focused on helping users explore opinions, topics, and arguments in a more interactive way.
+
+The concept explores:
+
+- Topic cards
+- Agree / disagree signals
+- Trending discussions
+- Lightweight public reasoning
+- A cleaner way to engage with debate-style content
+
+The goal is to create a product experience that feels more interactive than a blog but less chaotic than a traditional social feed.
+
+### Jira / Operations Automation
+
+A project direction focused on improving internal workflows through automation, documentation, and operational clarity.
+
+This work connects my finance and operations background with my interest in product systems, process improvement, and internal tools.
+
+## Experience Direction
+
+My experience sits at the intersection of business, technology, and product thinking.
+
+Areas I’m actively building around:
+
+- Product management
+- Business analytics
+- Front-end development
+- Financial technology
+- Workflow automation
+- User experience design
+- Technical storytelling
+
+## Why This Portfolio Exists
+
+This portfolio is meant to be more than a resume.
+
+It is a place to show how I think, how I build, and how I translate rough ideas into structured products.
+
+My goal is to keep improving this site as I build more projects, document my thinking, and move closer toward product, technology, and analytics roles.
+
+## Contact
+
+- GitHub: [github.com/isaiahcampusano](https://github.com/isaiahcampusano)
+- LinkedIn: Add LinkedIn link here
+- Email: Add email here
